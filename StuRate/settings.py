@@ -25,7 +25,7 @@ SECRET_KEY = 'ngb(_$34t18od74coxi)o*gf#_c(nfjgpl*#939n-f504dbu)k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["sc16x2llxy.pythonanywhere.com"]
 
 
 # Application definition
@@ -122,3 +122,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
