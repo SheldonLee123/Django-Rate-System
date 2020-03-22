@@ -1,11 +1,12 @@
 import requests, json
 import prettytable as pt
 
-host ="http://sc16x2llxy.pythonanywhere.com/"
+# host ="http://sc16x2llxy.pythonanywhere.com/"
+host = ""
 
 def register(username, email, password):
     global session
-    url = host + "register/"
+    url = host + "/register/"
     data = {"username": username, "email": email, "password": password}
     r = session.post(url=url, json=data)
     data = json.loads(r.text)
@@ -14,6 +15,7 @@ def register(username, email, password):
 def login(username, password, url):
     global session
     # url = host + "login/"
+    # print(url)
     try:
         data = {"username": username, "password": password}
         r = session.post(url=url, json=data)
@@ -29,7 +31,7 @@ def login(username, password, url):
 
 def logout():
     global session
-    url = host + "logout/"
+    url = host + "/logout/"
     r = session.get(url=url)
     data = json.loads(r.text)
     print(data.get("msg"))
@@ -37,7 +39,7 @@ def logout():
 
 def list():
     global session
-    url = host + "module/"
+    url = host + "/module/"
     r = session.get(url=url)
     data = json.loads(r.text)
     tb = pt.PrettyTable()
@@ -48,7 +50,7 @@ def list():
     for i in data:
         row = []
         for j in i:
-            if j == "taught_by":
+            if j == "/taught_by":
                 taught_by = []
                 for t in i[j]:
                     taught_by.append(dict(t)["teacher_name"])
@@ -60,7 +62,7 @@ def list():
 
 def view():
     global session
-    url = host + "view/"
+    url = host + "/view/"
     r = session.get(url=url)
     data = json.loads(r.text)
     # print(data)
@@ -75,7 +77,7 @@ def view():
 
 def average(professor_id, module_code):
     global session
-    url = host + "average/"
+    url = host + "/average/"
     data = {"professor_id": professor_id, "module_code": module_code}
     r = session.post(url=url, json=data)
     data = json.loads(r.text)
@@ -93,7 +95,7 @@ def average(professor_id, module_code):
 
 def rate(professor_id, module_code, year, semester, rating):
     global session
-    url = host + "rate/"
+    url = host + "/rate/"
     data = {"professor_id": professor_id, "module_code": module_code, "year": year, "semester": semester, "rating": rating}
     r = session.post(url=url, json=data)
     data = json.loads(r.text)
@@ -121,13 +123,13 @@ if __name__ == '__main__':
             register(username, email, password)
         elif command == "login":
             try:
-                url = user_input.split()[1]
+                host = "https://" + user_input.split()[1]
             except Exception as e:
                 print("Invalid format, please input as 'login url'!")
                 continue
             username = input("username:")
             password = input("password:")
-            login(username, password, url)
+            login(username, password, host + "/login/")
         elif command == "logout":
             logout()
         elif command == "list":

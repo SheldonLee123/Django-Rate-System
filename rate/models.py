@@ -8,10 +8,11 @@ class Module(models.Model):
     year = models.IntegerField()
     semester = models.IntegerField()
 
-    
+    class Meta:
+        unique_together = ('code', 'year', 'semester')
 
     def __str__(self):
-        return str(self.id)
+        return str(self.code+"("+self.year+","+self.semester+")")
 
 class Teacher(models.Model):
     name = models.CharField(max_length=50, unique=True)

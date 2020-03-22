@@ -15,7 +15,7 @@ quit
 admin site 
 http://sc16x2llxy.pythonanywhere.com/admin/
 username: ammar
-passwoed: ammarammar
+passwoed: 1qa1qa1qa
 ``````````````````````````````````````````````````````````````````````````````````````````````````
 register
 This is used to allow a user to register to the service using a username, email and a password. When the command is invoked, the program prompts the user to enter the username, email, and password of the new user. The syntax for this command is:

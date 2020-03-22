@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myclient/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/myclient/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myclient/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/myclient/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rate/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/rate/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rate/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/rate/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rate/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/rate/views.py" afterDir="false" />
     </list>
@@ -38,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Keras/SampleCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -135,6 +134,7 @@
       <workItem from="1584671928181" duration="29927000" />
       <workItem from="1584759241211" duration="22228000" />
       <workItem from="1584802215518" duration="3349000" />
+      <workItem from="1584886689788" duration="3693000" />
     </task>
     <servers />
   </component>
@@ -150,26 +150,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1085" y="427" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584807359398" />
-    <state width="1265" height="420" key="GridCell.Tab.0.bottom" timestamp="1584800759244">
+    <state width="916" height="270" key="GridCell.Tab.0.bottom" timestamp="1584889875635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1265" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1584695538573" />
-    <state width="1265" height="420" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584800759244" />
-    <state width="1265" height="420" key="GridCell.Tab.0.center" timestamp="1584800759243">
+    <state width="916" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584889875635" />
+    <state width="916" height="270" key="GridCell.Tab.0.center" timestamp="1584889875635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1265" height="287" key="GridCell.Tab.0.center/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1584695538572" />
-    <state width="1265" height="420" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584800759243" />
-    <state width="1265" height="420" key="GridCell.Tab.0.left" timestamp="1584800759243">
+    <state width="916" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584889875635" />
+    <state width="916" height="270" key="GridCell.Tab.0.left" timestamp="1584889875635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1265" height="287" key="GridCell.Tab.0.left/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1584695538571" />
-    <state width="1265" height="420" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584800759243" />
-    <state width="1265" height="420" key="GridCell.Tab.0.right" timestamp="1584800759244">
+    <state width="916" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584889875635" />
+    <state width="916" height="270" key="GridCell.Tab.0.right" timestamp="1584889875635">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1265" height="287" key="GridCell.Tab.0.right/0.0.1920.1040/-1600.0.1600.860@0.0.1920.1040" timestamp="1584695538573" />
-    <state width="1265" height="420" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584800759244" />
+    <state width="916" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584889875635" />
     <state x="669" y="169" key="SettingsEditor" timestamp="1584548382504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,6 +177,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/StuRate$client.coverage" NAME="client Coverage Results" MODIFIED="1584799400965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/StuRate$client__1_.coverage" NAME="client (1) Coverage Results" MODIFIED="1584799420372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myclient" />
+    <SUITE FILE_PATH="coverage/StuRate$client__1_.coverage" NAME="client (1) Coverage Results" MODIFIED="1584889828257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myclient" />
   </component>
 </project>

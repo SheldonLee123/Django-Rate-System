@@ -67,6 +67,7 @@ def Login(request):
         password = data.get('password')
         user = auth.authenticate(username=username, password=password)
         if not user:
+            ret['msg'] = '100'
             ret['msg'] = 'Password or Username is incorrect!'
             # ret['username'] = username
             # ret['password'] = password
@@ -75,8 +76,8 @@ def Login(request):
             request.session["login_user"] = username
             ret['msg'] = 'Welcome ' + username + ', Login Success!'
             return JsonResponse(ret)
-    ret['code'] = 100
-    ret['msg'] = 'You have not log in, Please log in first!'
+    ret['code'] = 101
+    ret['msg'] = 'Please use POST!'
     return JsonResponse(ret)
 
 def check_user(func):
