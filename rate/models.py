@@ -8,8 +8,10 @@ class Module(models.Model):
     year = models.IntegerField()
     semester = models.IntegerField()
 
+    
+
     def __str__(self):
-        return self.name
+        return str(self.id)
 
 class Teacher(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -21,6 +23,9 @@ class Teacher(models.Model):
 class Taught_by(models.Model):
     teacher_id = models.ForeignKey("Teacher", on_delete=models.CASCADE)
     module_id = models.ForeignKey("Module", on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('teacher_id', 'module_id',)
 
 class User_Rate(models.Model):
     Taught_by_id = models.ForeignKey("Taught_by", on_delete=models.CASCADE)

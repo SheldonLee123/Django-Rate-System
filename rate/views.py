@@ -18,6 +18,7 @@ code
 100 require login
 101 use POST method
 102 require correct input
+103 professor taught module mistake
 '''
 
 class ModuleView(viewsets.ModelViewSet):
@@ -134,13 +135,16 @@ def Average(request):
                     rates = User_Rate.objects.filter(Taught_by_id_id=taught_by.id)
                     for rate in rates:
                         average.append(rate.rate)
-            rating = 0.0
             if average:
                 rating = sum(average) / len(average)
-            ret[teacher.name] = int(rating)
-            ret['module_name'] = str(modules[0])
-            ret['code'] = 200
-            return JsonResponse(ret)
+                ret[teacher.name] = int(rating)
+                ret['module_name'] = str(modules[0])
+                ret['code'] = 200
+                return JsonResponse(ret)
+            else:
+                ret['code'] = 102
+                ret['msg'] = 'Professor does not taught this module.'
+                return JsonResponse(ret)
         else:
             ret['code'] = 102
             ret['msg'] = 'Sorry, we do not find anything. Please input correct information!'
@@ -166,16 +170,21 @@ def Rate(request):
         if float(rating) >= 1.0 and float(rating) <= 5.0:
             module = Module.objects.filter(code=module_code, year=year, semester=semester).first()
             teacher = Teacher.objects.filter(professor_id=professor_id).first()
-            taught_by = Taught_by.objects.filter(module_id=module.id, teacher_id=teacher.id).first()
-            # print(module.id)
-            # print(teacher.id)
-            print(taught_by)
-            if taught_by:
-                new_rate = User_Rate.objects.create(Taught_by_id_id=taught_by.id, rate=rating)
-                new_rate.save()
-                ret['code'] = 200
-                ret['msg'] = 'Rate successfully!'
-                return JsonResponse(ret)
+            if module and teacher:
+                taught_by = Taught_by.objects.filter(module_id=module.id, teacher_id=teacher.id).first()
+                # print(module.id)
+                # print(teacher.id)
+                print(taught_by)
+                if taught_by:
+                    new_rate = User_Rate.objects.create(Taught_by_id_id=taught_by.id, rate=rating)
+                    new_rate.save()
+                    ret['code'] = 200
+                    ret['msg'] = 'Rate successfully!'
+                    return JsonResponse(ret)
+                else:
+                    ret['code'] = 102
+                    ret['msg'] = 'Sorry, we can not record your rate. Please input correct information!'
+                    return JsonResponse(ret)
             else:
                 ret['code'] = 102
                 ret['msg'] = 'Sorry, we can not record your rate. Please input correct information!'

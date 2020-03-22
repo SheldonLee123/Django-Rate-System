@@ -1,21 +1,11 @@
 import requests, json
 import prettytable as pt
 
-# session = requests.session()
-# url = "http://127.0.0.1:8000/login/"
-# data = {"username": "lxy", "password": "lxy"}
-# r = session.post(url=url, json=data)
-# data = json.loads(r.text)
-# print(data.get("msg"))
-#
-# url = "http://127.0.0.1:8000/logout/"
-# r = session.get(url=url)
-# data = json.loads(r.text)
-# print(data.get("msg"))
+host ="http://sc16x2llxy.pythonanywhere.com/"
 
 def register(username, email, password):
     global session
-    url = "http://127.0.0.1:8000/register/"
+    url = host + "register/"
     data = {"username": username, "email": email, "password": password}
     r = session.post(url=url, json=data)
     data = json.loads(r.text)
@@ -23,7 +13,7 @@ def register(username, email, password):
 
 def login(username, password, url):
     global session
-    # url = "http://127.0.0.1:8000/login/"
+    # url = host + "login/"
     try:
         data = {"username": username, "password": password}
         r = session.post(url=url, json=data)
@@ -39,7 +29,7 @@ def login(username, password, url):
 
 def logout():
     global session
-    url = "http://127.0.0.1:8000/logout/"
+    url = host + "logout/"
     r = session.get(url=url)
     data = json.loads(r.text)
     print(data.get("msg"))
@@ -47,7 +37,7 @@ def logout():
 
 def list():
     global session
-    url = "http://127.0.0.1:8000/module/"
+    url = host + "module/"
     r = session.get(url=url)
     data = json.loads(r.text)
     tb = pt.PrettyTable()
@@ -70,7 +60,7 @@ def list():
 
 def view():
     global session
-    url = "http://127.0.0.1:8000/view/"
+    url = host + "view/"
     r = session.get(url=url)
     data = json.loads(r.text)
     # print(data)
@@ -85,7 +75,7 @@ def view():
 
 def average(professor_id, module_code):
     global session
-    url = "http://127.0.0.1:8000/average/"
+    url = host + "average/"
     data = {"professor_id": professor_id, "module_code": module_code}
     r = session.post(url=url, json=data)
     data = json.loads(r.text)
@@ -103,7 +93,7 @@ def average(professor_id, module_code):
 
 def rate(professor_id, module_code, year, semester, rating):
     global session
-    url = "http://127.0.0.1:8000/rate/"
+    url = host + "rate/"
     data = {"professor_id": professor_id, "module_code": module_code, "year": year, "semester": semester, "rating": rating}
     r = session.post(url=url, json=data)
     data = json.loads(r.text)
