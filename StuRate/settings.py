@@ -25,7 +25,7 @@ SECRET_KEY = 'ngb(_$34t18od74coxi)o*gf#_c(nfjgpl*#939n-f504dbu)k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["sc16x2llxy.pythonanywhere.com"]
+ALLOWED_HOSTS = ["sc16x2llxy.pythonanywhere.com", "localhost"]
 
 
 # Application definition

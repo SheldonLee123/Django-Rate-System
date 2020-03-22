@@ -12,7 +12,8 @@ class Module(models.Model):
         unique_together = ('code', 'year', 'semester')
 
     def __str__(self):
-        return str(self.code+"("+self.year+","+self.semester+")")
+        res = str(self.code)+"("+str(self.year)+","+str(self.semester)+")"
+        return res
 
 class Teacher(models.Model):
     name = models.CharField(max_length=50, unique=True)
