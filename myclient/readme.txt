@@ -1,5 +1,5 @@
 register
-login http://sc16x2llxy.pythonanywhere.com/login/
+login sc16x2llxy.pythonanywhere.com
 logout
 list
 view

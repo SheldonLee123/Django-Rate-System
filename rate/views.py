@@ -21,6 +21,10 @@ code
 103 professor taught module mistake
 '''
 
+def round_up(value):
+    # Replace the built-in round function to achieve accurate rounding with 2 decimal places
+    return int(value + 0.5)
+
 class ModuleView(viewsets.ModelViewSet):
     queryset = Module.objects.all()
     serializer_class = ModuleSerializer
@@ -77,7 +81,7 @@ def Login(request):
             ret['msg'] = 'Welcome ' + username + ', Login Success!'
             return JsonResponse(ret)
     ret['code'] = 101
-    ret['msg'] = 'Please use POST!'
+    ret['msg'] = 'Please login first!'
     return JsonResponse(ret)
 
 def check_user(func):
@@ -112,7 +116,7 @@ def View(request):
         # print(teacher.name)
         # print(int(rating))
         teacher_name = teacher.name + " (" + teacher.professor_id + ")"
-        ret[teacher_name] = int(rating)
+        ret[teacher_name] = round_up(rating)
     # ret['msg'] = 'Nice!'
     ret['code'] = 200
     return JsonResponse(ret)
@@ -138,8 +142,8 @@ def Average(request):
                         average.append(rate.rate)
             if average:
                 rating = sum(average) / len(average)
-                ret[teacher.name] = int(rating)
-                ret['module_name'] = str(modules[0])
+                ret[teacher.name] = round_up(rating)
+                ret['module_name'] = str(modules[0].name)
                 ret['code'] = 200
                 return JsonResponse(ret)
             else:

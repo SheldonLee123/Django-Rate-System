@@ -1,8 +1,8 @@
 import requests, json
 import prettytable as pt
 
-# host ="http://sc16x2llxy.pythonanywhere.com/"
-host = ""
+host ="http://sc16x2llxy.pythonanywhere.com/"
+# host = ""
 
 def register(username, email, password):
     global session
@@ -50,10 +50,10 @@ def list():
     for i in data:
         row = []
         for j in i:
-            if j == "/taught_by":
+            if j == "taught_by":
                 taught_by = []
                 for t in i[j]:
-                    taught_by.append(dict(t)["teacher_name"])
+                    taught_by.append(str(dict(t)["professor_id"])+", "+dict(t)["teacher_name"])
                 row.append(str(taught_by)[1:-1])
             else:
                 row.append(i[j])
@@ -74,6 +74,8 @@ def view():
                 pass
             else:
                 print("The rating of " + i + " is " + str(data[i]))
+    else:
+        print(data.get('msg'))
 
 def average(professor_id, module_code):
     global session
@@ -123,13 +125,13 @@ if __name__ == '__main__':
             register(username, email, password)
         elif command == "login":
             try:
-                host = "https://" + user_input.split()[1]
+                url = "https://" + user_input.split()[1]
             except Exception as e:
                 print("Invalid format, please input as 'login url'!")
                 continue
             username = input("username:")
             password = input("password:")
-            login(username, password, host + "/login/")
+            login(username, password, url + "/login/")
         elif command == "logout":
             logout()
         elif command == "list":
